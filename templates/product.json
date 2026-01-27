@@ -1,1 +1,596 @@
-{"sections":{"main":{"type":"main-product","blocks":{"liquid_pVzCcm":{"type":"liquid","settings":{"liquid":"{%- comment -%}\nVesmina – Rating line (4.7 stars, PL, gray text) – SAFE VERSION\n{%- endcomment -%}\n\n{%- assign grad_id = 'vesminaStarGrad-' | append: section.id -%}\n\n<style>\n  .vesmina-rating-line{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    margin:0 0 10px 0;\n    font-size:14px;\n    line-height:1.25;\n    flex-wrap:nowrap;\n  }\n  .vesmina-stars{\n    display:flex;\n    align-items:center;\n    gap:2px;\n    flex-shrink:0;\n  }\n  .vesmina-stars svg{\n    width:18px;\n    height:18px;\n    display:block;\n  }\n  .vesmina-rating-text{\n    display:flex;\n    align-items:center;\n    gap:6px;\n    white-space:nowrap;\n    color:#6b7280; \/* soft gray *\/\n  }\n  .vesmina-rating-text strong{\n    color:#374151; \/* slightly darker for 4,7\/5 *\/\n    font-weight:600;\n  }\n\n  @media (max-width: 480px){\n    .vesmina-rating-line{ font-size:13px; gap:6px; }\n    .vesmina-stars svg{ width:16px; height:16px; }\n    .vesmina-rating-text{ gap:5px; }\n  }\n<\/style>\n\n<div class=\"vesmina-rating-line\" aria-label=\"Ocena klientów\">\n  <div class=\"vesmina-stars\" aria-hidden=\"true\">\n    <!-- 4 full stars -->\n    {% for i in (1..4) %}\n      <svg viewBox=\"0 0 24 24\" fill=\"#1faa4b\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" role=\"img\">\n        <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"\/>\n      <\/svg>\n    {% endfor %}\n\n    <!-- partial star (70%) -->\n    <svg viewBox=\"0 0 24 24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" role=\"img\" aria-hidden=\"true\">\n      <defs>\n        <linearGradient id=\"{{ grad_id }}\">\n          <stop offset=\"70%\" stop-color=\"#1faa4b\"\/>\n          <stop offset=\"70%\" stop-color=\"#e5e7eb\"\/>\n        <\/linearGradient>\n      <\/defs>\n      <path fill=\"url(#{{ grad_id }})\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"\/>\n    <\/svg>\n  <\/div>\n\n  <div class=\"vesmina-rating-text\">\n    <strong>4,7\/5<\/strong>\n    <span>na podstawie 999+ opinii klientów<\/span>\n  <\/div>\n<\/div>"}},"title_fjYh7d":{"type":"title","settings":{"heading_tag":"h4"}},"price_VDj6mT":{"type":"price","settings":{"show_taxes_notice":false}},"liquid_jWAQYC":{"type":"liquid","settings":{"liquid":"<div class=\"vesmina-liveview\" aria-live=\"polite\">\n  <span class=\"vesmina-liveview__icon\" aria-hidden=\"true\">\n    <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <path d=\"M1.5 12s4-7.5 10.5-7.5S22.5 12 22.5 12s-4 7.5-10.5 7.5S1.5 12 1.5 12Z\"\n            stroke=\"currentColor\" stroke-width=\"1.6\"\/>\n      <circle cx=\"12\" cy=\"12\" r=\"3\"\n              stroke=\"currentColor\" stroke-width=\"1.6\"\/>\n    <\/svg>\n  <\/span>\n\n  <span class=\"vesmina-liveview__text\">\n    <strong id=\"vesminaEstimate\">82<\/strong>osób ogląda to teraz\n  <\/span>\n<\/div>\n\n<style>\n  .vesmina-liveview{\n    display:flex;\n    align-items:center;\n    gap:6px; \/* 🔧 tighter icon ↔ text *\/\n\n    font-size:14px;\n    line-height:1.2;\n    color:inherit;\n    margin:0;\n    padding:0;\n  }\n\n  .vesmina-liveview__icon{\n    display:inline-flex;\n    align-items:center;\n    opacity:.85;\n  }\n\n  .vesmina-liveview__text strong{\n    font-weight:600;\n    margin-right:3px; \/* 🔧 tighter number ↔ text *\/\n  }\n<\/style>\n\n<script>\n  (function(){\n    const el = document.getElementById('vesminaEstimate');\n    if(!el) return;\n\n    const min = 50;\n    const max = 100;\n\n    function update(){\n      const value = Math.floor(Math.random() * (max - min + 1)) + min;\n      el.textContent = value;\n    }\n\n    update();\n    setInterval(update, 5000);\n  })();\n<\/script>"}},"variant_picker_KjFPVF":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"stack_blocks":false,"selector_style":"block","swatch_selector_style":"none","variant_image_options":"","size_chart_page":"tabela-rozmiarow"}},"liquid_4TgAKG":{"type":"liquid","settings":{"liquid":"<style>\n  \/* Wrapper *\/\n  .vesmina-stock-wrap{\n    width:100%;\n    max-width:100%;\n    padding:0;\n    margin:0;\n  }\n\n  .vesmina-stock{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    padding:3px 0;\n    margin:0;\n    width:100%;\n  }\n\n  \/* ✅ UNIQUE RED DOT (no conflict with shipping banner) *\/\n  .vesmina-stock-dot{\n    width:12px;\n    height:12px;\n    background:#c94444;\n    border-radius:50%;\n    flex-shrink:0;\n    position:relative;\n    animation: vesminaStockPulse 2s infinite;\n  }\n\n  .vesmina-stock-dot::before{\n    content:'';\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%,-50%);\n    width:100%;\n    height:100%;\n    background:#c94444;\n    border-radius:50%;\n    animation: vesminaStockWave 2s infinite;\n    opacity:0;\n  }\n\n  @keyframes vesminaStockPulse{\n    0%,100%{ transform:scale(1); }\n    50%{ transform:scale(1.1); }\n  }\n\n  @keyframes vesminaStockWave{\n    0%{ transform:translate(-50%,-50%) scale(1); opacity:.8; }\n    100%{ transform:translate(-50%,-50%) scale(2.5); opacity:0; }\n  }\n\n  \/* TEXT — red + bold *\/\n  .vesmina-stock-text{\n    font-size:14px !important;\n    font-weight:700 !important;\n    color:#c94444 !important;\n    line-height:1.4 !important;\n    margin:0 !important;\n  }\n\n  \/* Mobile *\/\n  @media (max-width:768px){\n    .vesmina-stock{ gap:6px; padding:2px 0; }\n    .vesmina-stock-dot{ width:10px; height:10px; }\n    .vesmina-stock-text{ font-size:13px !important; }\n  }\n\n  @media (max-width:480px){\n    .vesmina-stock{ gap:15px; }\n    .vesmina-stock-dot{ width:9px; height:9px; }\n    .vesmina-stock-text{ font-size:15px !important; }\n  }\n<\/style>\n\n<div class=\"vesmina-stock-wrap\">\n  <div class=\"vesmina-stock\">\n    <span class=\"vesmina-stock-dot\" aria-hidden=\"true\"><\/span>\n    <span class=\"vesmina-stock-text\">Ograniczona ilość w magazynie<\/span>\n  <\/div>\n<\/div>"}},"liquid_hWU4QM":{"type":"liquid","settings":{"liquid":"<style>\n  \/* zero padding & margin, mobile friendly *\/\n  .vesmina-static-7{\n    margin: 0 !important;\n    padding: 0 !important;\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    font-size: 13px;\n    line-height: 1.2;\n    color: #111; \/* change if needed *\/\n  }\n  .vesmina-static-7 .icon{\n    width: 18px;\n    height: 18px;\n    margin: 0 !important;\n    padding: 0 !important;\n    flex: 0 0 auto;\n  }\n  .vesmina-static-7 .txt{\n    margin: 0 !important;\n    padding: 0 !important;\n    white-space: nowrap;\n  }\n  @media (max-width: 740px){\n    .vesmina-static-7{\n      font-size: 12px;\n      gap: 6px;\n    }\n    .vesmina-static-7 .icon{\n      width: 16px;\n      height: 16px;\n    }\n  }\n<\/style>\n\n<div class=\"vesmina-static-7\" aria-label=\"Low stock notice\">\n  <!-- icon similar vibe to your screenshot -->\n  <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n    <path d=\"M12 7v5l3 2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\/>\n    <path d=\"M21 12a9 9 0 1 1-3.1-6.7\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"\/>\n    <path d=\"M21 4v6h-6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"\/>\n  <\/svg>\n\n  <!-- Polish text (fixed number 7) -->\n  <span class=\"txt\">Zostało tylko <strong>7<\/strong> szt. w magazynie.<\/span>\n<\/div>"}},"buy_buttons_RwkAPF":{"type":"buy_buttons","settings":{"show_payment_button":false,"show_gift_card_recipient":false,"atc_button_background":"","atc_button_text_color":"","payment_button_background":"","payment_button_text_color":""}},"liquid_y7wkgN":{"type":"liquid","settings":{"liquid":"<style>\n  .vesmina-shipbar{\n    background:#f8f8f8;\n    padding:10px 15px;\n    border-radius:8px;\n    width:100%;\n    display:flex;\n    justify-content:space-between;\n    align-items:center;\n    gap:14px;\n    margin:0 !important;\n  }\n\n  .vesmina-ship-left,\n  .vesmina-ship-right{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    min-width:0;\n  }\n\n  .vesmina-ship-right{\n    margin-left:auto;\n  }\n\n  \/* GREEN DOT *\/\n  .vesmina-ship-dot{\n    width:12px;\n    height:12px;\n    background:#4caf50;\n    border-radius:50%;\n    position:relative;\n    flex-shrink:0;\n    animation: vesminaShipPulse 2s infinite;\n  }\n\n  .vesmina-ship-dot::before{\n    content:'';\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%,-50%);\n    width:100%;\n    height:100%;\n    background:#4caf50;\n    border-radius:50%;\n    animation: vesminaShipWave 2s infinite;\n    opacity:0;\n  }\n\n  @keyframes vesminaShipPulse{\n    0%,100%{ transform:scale(1); }\n    50%{ transform:scale(1.1); }\n  }\n\n  @keyframes vesminaShipWave{\n    0%{ transform:translate(-50%,-50%) scale(1); opacity:.8; }\n    100%{ transform:translate(-50%,-50%) scale(2.5); opacity:0; }\n  }\n\n  .vesmina-ship-text{\n    font-size:13px;\n    font-weight:600;\n    color:#333;\n    white-space:nowrap;\n  }\n\n  \/* CIRCULAR POLISH FLAG (SVG) *\/\n  .vesmina-flag-img{\n    width:18px;\n    height:18px;\n    display:block;\n    border-radius:50%;\n    flex-shrink:0;\n  }\n\n  .vesmina-fast{\n    font-size:13px;\n    font-weight:600;\n    color:#333;\n    white-space:nowrap;\n  }\n\n  \/* Tablet *\/\n  @media (max-width:768px){\n    .vesmina-shipbar{ padding:8px 12px; gap:12px; }\n    .vesmina-ship-text, .vesmina-fast{ font-size:12px; }\n    .vesmina-ship-dot{ width:10px; height:10px; }\n    .vesmina-flag-img{ width:16px; height:16px; }\n  }\n\n  \/* Mobile *\/\n  @media (max-width:480px){\n    .vesmina-shipbar{\n      padding:8px 10px;\n      gap:10px;\n      flex-wrap:wrap;\n    }\n    .vesmina-ship-text, .vesmina-fast{\n      font-size:11px;\n      white-space:normal;\n    }\n    .vesmina-ship-dot{ width:9px; height:9px; }\n    .vesmina-flag-img{ width:15px; height:15px; }\n  }\n<\/style>\n\n<div class=\"vesmina-shipbar\" role=\"note\" aria-label=\"Informacje o dostawie\">\n  <div class=\"vesmina-ship-left\">\n    <span class=\"vesmina-ship-dot\" aria-hidden=\"true\"><\/span>\n    <span class=\"vesmina-ship-text\" id=\"vesmina-ship-date\">\n      Dostawa: za 3 dni, 00\/00\n    <\/span>\n  <\/div>\n\n  <div class=\"vesmina-ship-right\">\n    <!-- 🇵🇱 POLISH FLAG — CIRCULAR SVG -->\n    <svg class=\"vesmina-flag-img\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 100 100\" aria-label=\"Polska\" role=\"img\">\n      <defs>\n        <clipPath id=\"plCircle\">\n          <circle cx=\"50\" cy=\"50\" r=\"50\"\/>\n        <\/clipPath>\n      <\/defs>\n      <g clip-path=\"url(#plCircle)\">\n        <rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"#ffffff\"\/>\n        <rect x=\"0\" y=\"50\" width=\"100\" height=\"50\" fill=\"#dc143c\"\/>\n      <\/g>\n    <\/svg>\n\n    <span class=\"vesmina-fast\">Szybka dostawa<\/span>\n  <\/div>\n<\/div>\n\n<script>\n  (function () {\n    function pad2(n){ return String(n).padStart(2,'0'); }\n\n    var today = new Date();\n    var d = new Date(today);\n    d.setDate(today.getDate() + 3); \/\/ +3 days\n\n    var dd = pad2(d.getDate());\n    var mm = pad2(d.getMonth() + 1);\n\n    var el = document.getElementById('vesmina-ship-date');\n    if (el) {\n      el.textContent = \"Dostawa: za 3 dni, \" + dd + \"\/\" + mm;\n    }\n  })();\n<\/script>"}},"liquid_8DP7AY":{"type":"liquid","settings":{"liquid":"<style>\n  .product-benefits {\n    margin: 16px 0;\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    width: 100%;\n  }\n\n  .benefit-item {\n    padding: 0; \/* IMPORTANT: no extra padding *\/\n    font-size: 14px;\n    font-weight: 500;\n    color: #1a1a1a;\n    line-height: 1.4;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n\n  .benefit-icon {\n    width: 20px;\n    height: 20px;\n    min-width: 20px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .benefit-icon img {\n    width: 100%;\n    height: 100%;\n    object-fit: contain;\n  }\n\n  .benefit-text {\n    flex: 1;\n  }\n\n  \/* Mobile *\/\n  @media (max-width: 480px) {\n    .benefit-item {\n      font-size: 13px;\n      gap: 8px;\n    }\n\n    .benefit-icon {\n      width: 30px;\n      height: 25px;\n      min-width: 18px;\n    }\n  }\n<\/style>\n\n<div class=\"product-benefits\">\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/ChatGPT_Image_Dec_24_2025_06_50_59_PM.png?v=1766595117\" alt=\"BLIK\">\n    <\/div>\n    <div class=\"benefit-text\">Akceptujemy BLIK<\/div>\n  <\/div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/png-transparent-fast-delivery-truck-cargo-delivery-icon-express-delivery-freight-transport-text-service-thumbnail.png?v=1766597648\"\">\n    <\/div>\n    <div class=\"benefit-text\">Darmowa dostawa Pocztą Polską<\/div>\n  <\/div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/9935372.png?v=1766597989\" alt=\"\">\n    <\/div>\n    <div class=\"benefit-text\">30 dni próbnych – bez żadnego ryzyka<\/div>\n  <\/div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/202995.png?v=1766598099\" alt=\"\">\n    <\/div>\n    <div class=\"benefit-text\">Polska firma rodzinna<\/div>\n  <\/div>\n<\/div>"}},"liquid_DWmEcH":{"type":"liquid","settings":{"liquid":"<style>\n  \/* ✅ 7 icons ALWAYS in one line (no wrap, no scroll) *\/\n  .vesmina-payments {\n    width: 100%;\n    display: grid;\n    grid-template-columns: repeat(7, minmax(0, 1fr)); \/* forces 7 in one row *\/\n    gap: 8px;\n    margin: 0;\n    padding: 0;\n    align-items: center;\n  }\n\n  .vesmina-payment-box {\n    height: 34px;\n    width: 100%;\n    background: #fff;\n    border: 1px solid #e5e5e5;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 6px;\n    box-sizing: border-box;\n    overflow: hidden; \/* prevents extra whitespace showing *\/\n  }\n\n  \/* ✅ crisp rendering + prevent blur from scaling *\/\n  .vesmina-payment-box img{\n    height: 18px;\n    width: auto;\n    max-width: 100%;\n    display: block;\n    object-fit: contain;\n    image-rendering: -webkit-optimize-contrast;\n    transform: translateZ(0);\n  }\n\n  \/* Tablet *\/\n  @media (max-width: 768px){\n    .vesmina-payments{ gap: 6px; }\n    .vesmina-payment-box{ height: 32px; padding: 5px; }\n    .vesmina-payment-box img{ height: 16px; }\n  }\n\n  \/* Mobile *\/\n  @media (max-width: 480px){\n    .vesmina-payments{ gap: 5px; }\n    .vesmina-payment-box{ height: 30px; padding: 4px; }\n    .vesmina-payment-box img{ height: 25px; }\n  }\n\n  \/* Very small phones *\/\n  @media (max-width: 360px){\n    .vesmina-payments{ gap: 4px; }\n    .vesmina-payment-box{ height: 28px; padding: 3px; }\n    .vesmina-payment-box img{ height: 25px; }\n  }\n<\/style>\n\n<div class=\"vesmina-payments\" aria-label=\"Metody płatności\">\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/ChatGPT_Image_Dec_24_2025_06_50_59_PM.png?v=1766595118\" alt=\"BLIK\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/visa-6850402_1280.webp?v=1766624444\" alt=\"Visa\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/mastercard-svgrepo-com.svg?v=1766626105\" alt=\"Mastercard\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/5968245.png?v=1766624533\" alt=\"American Express\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/maestro-svgrepo-com.svg?v=1766625840\" alt=\"Maestro\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/przelewy24-svgrepo-com.svg?v=1766625725\" alt=\"Przelewy24\" loading=\"lazy\"><\/div>\n  <div class=\"vesmina-payment-box\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/1004\/5118\/9077\/files\/payu-svgrepo-com.svg?v=1766625770\" alt=\"PayU\" loading=\"lazy\"><\/div>\n<\/div>"}},"liquid_zNiUBe":{"type":"liquid","settings":{"liquid":"<style>\n  .vesmina-sale-box{\n    width:100%;\n    margin:0;\n    padding:0;\n  }\n\n  .vesmina-sale-inner{\n    border:2px solid #f6f6f6;\n    background:#f6f6f6;\n    border-radius:0;\n    padding:18px 16px;\n    text-align:center;\n  }\n\n  .vesmina-sale-title{\n    margin:0 0 10px 0;\n    font-size:clamp(16px, 4vw, 18px);\n    font-weight:800;\n    letter-spacing:.3px;\n    text-transform:uppercase;\n    color:#c53030;\n    line-height:1.2;\n  }\n\n  .vesmina-sale-sub{\n    margin:0 0 6px 0;\n    font-size:clamp(12.5px, 3.5vw, 13px);\n    font-weight:700;\n    color:#000;\n    line-height:1.3;\n  }\n\n  \/* NEW LINE *\/\n  .vesmina-sale-note{\n    margin:0 0 10px 0;\n    font-size:clamp(11.5px, 3.2vw, 12px);\n    font-weight:500;\n    color:#000;\n    line-height:1.3;\n  }\n\n  .vesmina-sale-tiers{\n    margin:0;\n    font-size:clamp(11.5px, 3.2vw, 12px);\n    font-weight:600;\n    color:#000;\n    line-height:1.4;\n  }\n\n  @media (max-width:480px){\n    .vesmina-sale-inner{\n      padding:16px 14px;\n    }\n  }\n<\/style>\n\n<div class=\"vesmina-sale-box\" aria-label=\"Promocja\">\n  <div class=\"vesmina-sale-inner\">\n    <div class=\"vesmina-sale-title\">ZIMOWA WYPRZEDAŻ (-70%)<\/div>\n    <div class=\"vesmina-sale-sub\">Promocja ilościowa<\/div>\n    <div class=\"vesmina-sale-note\">Rabaty naliczają się automatycznie w koszyku<\/div>\n    <div class=\"vesmina-sale-tiers\">2 szt. -15% | 3 szt. -20% | 5+ szt. -30%<\/div>\n  <\/div>\n<\/div>"}},"description_xPzDkw":{"type":"description","settings":{"collapse_content":false}},"collapsible_text_KKeYCL":{"type":"collapsible_text","settings":{"title":"INFORMACJE O WYSYŁCE","content":"<p><strong>Vesmina<\/strong> oferuje <strong>darmową dostawę na terenie całej Polski<\/strong> oraz <strong>bezpieczną wysyłkę zagraniczną<\/strong>.<\/p><ul><li><br\/>Zamówienia są przetwarzane <strong>w ciągu 24 godzin od potwierdzenia płatności<\/strong>.<br\/><\/li><li><br\/>Każdej przesyłce przypisywany jest <strong>indywidualny numer śledzenia<\/strong>, wysyłany na adres e-mail.<\/li><\/ul>","page":""}},"collapsible_text_RjctHk":{"type":"collapsible_text","settings":{"title":"30-DNIOWA GWARANCJA ZWROTU","content":"<p>W <strong>Vesmina<\/strong> oferujemy <strong>30-dniową gwarancję zwrotu<\/strong>, aby zapewnić pełne zadowolenie z zakupów.<\/p><p>Jeśli produkt nie spełnia Twoich oczekiwań, możesz go zwrócić <strong>w ciągu 30 dni od daty otrzymania zamówienia<\/strong>.<\/p>","page":""}}},"block_order":["liquid_pVzCcm","title_fjYh7d","price_VDj6mT","liquid_jWAQYC","variant_picker_KjFPVF","liquid_4TgAKG","liquid_hWU4QM","buy_buttons_RwkAPF","liquid_y7wkgN","liquid_8DP7AY","liquid_DWmEcH","liquid_zNiUBe","description_xPzDkw","collapsible_text_KKeYCL","collapsible_text_RjctHk"],"custom_css":[],"settings":{"full_width":false,"show_fixed_add_to_cart":true,"desktop_media_width":45,"desktop_media_layout":"grid","mobile_media_size":"contained","mobile_carousel_control":"free_scroll","enable_video_autoplay":false,"enable_video_looping":true,"enable_image_zoom":false,"max_image_zoom_level":1,"background":"","background_gradient":"","text_color":"","input_background":"rgba(0,0,0,0)","input_text_color":""}},"17667849997448b9ba":{"type":"_blocks","blocks":{"ai_gen_block_827e7d0_FbCtDQ":{"type":"ai_gen_block_827e7d0","settings":{"avatar_1":"shopify:\/\/shop_images\/polish-women-face.png","avatar_2":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_26_2025_11_54_55_PM.png","show_third_avatar":true,"avatar_3":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_26_2025_11_54_55_PM_4f62e9bf-47ec-4dc9-8bba-922747478f70.png","avatar_size":32,"trust_message":"<strong>Joanna, Eve<\/strong> oraz ponad 2987<strong> klientów<\/strong> wybrało Vesmina.","text_size":14,"background_color":"#ffffff","text_color":"#333333","placeholder_color":"#e8e8e8","padding":8,"desktop_width_percent":100},"blocks":{}}},"block_order":["ai_gen_block_827e7d0_FbCtDQ"],"settings":{}},"23_gzTAyr":{"type":"23","blocks":{"item_t8RHpB":{"type":"item","settings":{"stars_count":5,"heading":"Dokładnie jak na zdjęciach","text":"„Trochę się obawiałam zamawiania, ale wszystko przyszło idealne. Rozmiar się zgadza, krój super leży, a kolor wygląda jeszcze lepiej na żywo.”","author_date":"Magdalena","author_image":"shopify:\/\/shop_images\/polish-women-face.png"}},"item_XkqfJe":{"type":"item","settings":{"stars_count":4.5,"heading":"Uwielbiam! 😍","text":"„Na początku miałam pewne wątpliwości, ale po pierwszym zamówieniu jestem naprawdę pozytywnie zaskoczona. Materiał jest świetnej jakości, krój leży idealnie, a całość wygląda dokładnie tak jak na zdjęciach.”","author_date":"Joanna","author_image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_26_2025_11_54_55_PM.png"}},"item_N3CFNc":{"type":"item","settings":{"stars_count":5,"heading":"Świetna jakość 🤍","text":"„Ubranie wygląda bardzo elegancko, a materiał jest miękki i przyjemny w noszeniu. Widać dbałość o detale. Zdecydowanie jedna z lepszych rzeczy, jakie zamawiałam online.”","author_date":"Eve","author_image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_26_2025_11_54_55_PM_4f62e9bf-47ec-4dc9-8bba-922747478f70.png"}}},"block_order":["item_t8RHpB","item_XkqfJe","item_N3CFNc"],"name":"SS - Testimonial #16","settings":{"content_align":"center","content_align_mobile":"center","heading":"Nasi klienci mówią to najlepiej","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":40,"heading_size_mobile":24,"heading_height":130,"rating_text":"Ocena","rating_text_custom":false,"rating_text_font":"josefin_sans_n4","rating_text_size":24,"rating_text_size_mobile":20,"rating_text_height":130,"rating_text_mt":16,"rating_text_mt_mobile":16,"rating":4.7,"rating_hide":false,"rating_text_hide":false,"stars_count":4.5,"stars_size":28,"stars_size_mobile":24,"text":"<p>na podstawie <strong>2987 opinii<\/strong><\/p>","text_custom":false,"text_font":"josefin_sans_n4","text_size":20,"text_size_mobile":16,"text_height":130,"text_mt":16,"text_mt_mobile":16,"scrolling_velocity":112,"scrolling_velocity_mobile":20,"reverse_direction":false,"pause_hover":true,"scrolling_mt":36,"scrolling_mt_mobile":36,"scrolling_gap":20,"scrolling_gap_mobile":12,"card_width":360,"card_width_mobile":300,"card_padding_vertical":36,"card_padding_vertical_mobile":28,"card_padding_horizontal":40,"card_padding_horizontal_mobile":24,"card_radius":16,"card_border_thickness":0,"card_shadow_style":"2","card_content_align":"center","card_content_align_mobile":"center","card_height":false,"card_heading_custom":false,"card_heading_font":"josefin_sans_n4","card_heading_size":0,"card_heading_size_mobile":12,"card_heading_height":50,"card_heading_mt":0,"card_heading_mt_mobile":16,"card_text_custom":false,"card_text_font":"josefin_sans_n4","card_text_size":14,"card_text_size_mobile":14,"card_text_height":150,"card_text_mt":16,"card_text_mt_mobile":16,"card_text_more":"View More","card_text_less":"View Less","card_count_words":60,"author_image_size":56,"author_image_size_mobile":40,"author_image_position":"inline_text","card_author_date_text_custom":false,"card_author_date_text_font":"josefin_sans_n4","card_author_date_text_size":16,"card_author_date_text_size_mobile":16,"card_author_date_text_height":130,"card_author_date_text_mt":16,"card_author_date_text_mt_mobile":16,"button":"","button_url":"","button_custom":false,"button_font":"josefin_sans_n4","button_size":16,"button_size_mobile":14,"button_height":100,"button_align":"center","button_align_mobile":"center","button_mt":32,"button_mt_mobile":28,"button_padding_vertical":16,"button_padding_vertical_mobile":16,"button_padding_horizontal":20,"button_padding_horizontal_mobile":20,"button_radius":8,"button_border_thickness":1,"button_style":"outline","button_color":"#ffffff","button_hover_color":"#000000","button_bg_color":"#000000","button_bg_hover_color":"#ffffff","button_border_color":"#000000","button_border_hover_color":"#000000","card_bg_color":"#ffffff","card_border_color":"#000000","card_heading_color":"#000000","card_text_color":"#000000","card_author_date_text_color":"#000000","view_color":"#000000","heading_color":"#000000","rating_text_color":"#000000","stars_bg_color":"#00b67a","stars_color":"#ffffff","text_color":"#000000","background_color":"#ffffff","background_gradient":"linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":60,"padding_bottom":60,"padding_horizontal":5,"padding_horizontal_mobile":1.5,"full_width":true,"content_width":120,"border_thickness":0,"lazy":true}},"1766786850aa4823f5":{"type":"_blocks","blocks":{"ai_gen_block_672b602_nAQ38L":{"type":"ai_gen_block_672b602","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_26_2025_11_58_34_PM.png","image_border_radius":24,"heading":"Ręcznie wykonane","description":"<p><br\/>Vesmina oferuje starannie wyselekcjonowaną odzież i akcesoria, tworzone z dbałością o detale i jakość.<br\/><br\/>Każdy produkt łączy ponadczasowy styl, komfort noszenia i naturalną elegancję.<br\/><br\/><\/p>","content_max_width":1000,"text_max_width":600,"spacing_mobile":20,"spacing_desktop":30,"section_padding_mobile":20,"section_padding_desktop":40,"heading_size_mobile":26,"heading_size_desktop":42,"heading_weight":"700","heading_transform":"uppercase","heading_spacing_mobile":12,"heading_spacing_desktop":16,"heading_color":"#000000","text_size_mobile":14,"text_size_desktop":16,"text_line_height":1.4,"text_color":"#333333","background_color":"#ffffff"},"blocks":{}}},"block_order":["ai_gen_block_672b602_nAQ38L"],"settings":{}},"related_products_4ciMMy":{"type":"related-products","name":"Related products","settings":{"recommendations_count":6,"products":[],"full_width":true,"stack_products":false,"show_progress_bar":false,"products_per_row_mobile":"1","products_per_row_desktop":3,"subheading":"","title":"Może Ci się spodobać","content":"","background":"","background_gradient":"","text_color":"","heading_color":"","heading_gradient":"","product_card_background":"","product_card_text_color":""}},"ss_scrolling_images_JFcmXU":{"type":"ss-scrolling-images","blocks":{"image_MWYQH7":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_27_2025_01_35_56_AM.png","url":""}},"image_y9FBm6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_27_2025_01_35_56_AM_7304aac4-72a2-44eb-a0cc-04d914674d2e.png","url":""}},"image_4FtAaK":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_27_2025_01_35_56_AM_d1cc1afb-d1e6-4017-81a5-30965e1695a7.png","url":""}},"image_qRDR3A":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_27_2025_01_35_56_AM_229d5a9f-6aa1-4144-bd50-89b08b7b0f3c.png","url":""}},"image_pcRzMe":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_27_2025_01_35_56_AM_df2cb9dd-df61-4b7d-b242-e6a2a9907d81.png","url":""}}},"block_order":["image_MWYQH7","image_y9FBm6","image_4FtAaK","image_qRDR3A","image_pcRzMe"],"name":"SS - Scrolling images","settings":{"heading":"<p>VESMINA<\/p>","heading_custom":false,"heading_font":"josefin_sans_n4","heading_size":40,"heading_height":130,"heading_align":"center","slider_speed":13,"slider_gap":10,"slider_gap_mobile":10,"slider_mt":50,"slider_direction":"left","pause_hover":false,"image_width_desktop":300,"image_width_mobile":120,"image_height_desktop":400,"image_height_mobile":200,"image_radius":10,"use_content":true,"content_position":"center","content_max_width":340,"content_max_width_mobile":340,"content_padding_vertical":30,"content_padding_horizontal":30,"content_distance":60,"content_radius":10,"content_border_thickness":0,"use_shadow":true,"text":"<p>Ponad 9 000 klientek w Polsce — społeczność Vesmina stale się powiększa.<\/p>","text_custom":false,"text_font":"assistant_n4","text_size":24,"text_height":130,"heading_color":"#000000","content_bg":"#ffffff","content_border_color":"#000000","text_color":"#000000","background_color":"#ffffff","background_gradient":"","border_color":"#000000","margin_top":0,"margin_bottom":0,"padding_top":36,"padding_bottom":36,"padding_horizontal":0,"padding_horizontal_mobile":0,"full_width":true,"content_width":120,"border_thickness":0,"lazy":true}},"text_with_icons_xQbLyb":{"type":"text-with-icons","blocks":{"item_dctcDe":{"type":"item","settings":{"icon":"picto-box","mobile_icon_width":24,"icon_width":32,"icon_background_type":"none","icon_background":"","icon_color":"","title":"Darmowa wysyłka","content":"<p>Oferujemy darmową wysyłkę w Polsce.<\/p>"}},"item_dd3AAp":{"type":"item","settings":{"icon":"picto-customer-support","mobile_icon_width":24,"icon_width":32,"icon_background_type":"none","icon_background":"","icon_color":"","title":"Obsługa klienta","content":"<p>Oferujemy całodobową obsługę klienta, 7 dni w tygodniu. Zawsze możesz zadać nam pytanie, a nasi eksperci odpowiedzą w ciągu 24 godzin!<\/p>"}},"item_enWniB":{"type":"item","settings":{"icon":"picto-coupon","mobile_icon_width":24,"icon_width":32,"icon_background_type":"none","icon_background":"","icon_color":"","title":"Ponad 2300 recenzji","content":"<p>Mamy ponad 25 000 klientów, którzy nam ufają, oraz ponad 2 300, którzy zostawili opinię, z średnią oceną<\/p>"}},"item_RhTGkK":{"type":"item","settings":{"icon":"picto-lock","mobile_icon_width":24,"icon_width":32,"icon_background_type":"none","icon_background":"","icon_color":"","title":"Bezpieczna płatność","content":"<p>Każda płatność u nas jest w 100% bezpieczna i objęta gwarancją bezpieczeństwa.<\/p>"}}},"block_order":["item_dctcDe","item_dd3AAp","item_enWniB","item_RhTGkK"],"name":"Text with icons","settings":{"full_width":true,"stack_on_mobile":false,"title":"","heading_tag":"h3","text_alignment":"center","icon_spacing":"small","background":"","background_gradient":"","text_color":""}}},"order":["main","17667849997448b9ba","23_gzTAyr","1766786850aa4823f5","related_products_4ciMMy","ss_scrolling_images_JFcmXU","text_with_icons_xQbLyb"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "liquid_pVzCcm": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{%- comment -%}\nVesmina – Rating line (4.7 stars, PL, gray text) – SAFE VERSION\n{%- endcomment -%}\n\n{%- assign grad_id = 'vesminaStarGrad-' | append: section.id -%}\n\n<style>\n  .vesmina-rating-line{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    margin:0 0 10px 0;\n    font-size:14px;\n    line-height:1.25;\n    flex-wrap:nowrap;\n  }\n  .vesmina-stars{\n    display:flex;\n    align-items:center;\n    gap:2px;\n    flex-shrink:0;\n  }\n  .vesmina-stars svg{\n    width:18px;\n    height:18px;\n    display:block;\n  }\n  .vesmina-rating-text{\n    display:flex;\n    align-items:center;\n    gap:6px;\n    white-space:nowrap;\n    color:#6b7280; /* soft gray */\n  }\n  .vesmina-rating-text strong{\n    color:#374151; /* slightly darker for 4,7/5 */\n    font-weight:600;\n  }\n\n  @media (max-width: 480px){\n    .vesmina-rating-line{ font-size:13px; gap:6px; }\n    .vesmina-stars svg{ width:16px; height:16px; }\n    .vesmina-rating-text{ gap:5px; }\n  }\n</style>\n\n<div class=\"vesmina-rating-line\" aria-label=\"Ocena klientów\">\n  <div class=\"vesmina-stars\" aria-hidden=\"true\">\n    <!-- 4 full stars -->\n    {% for i in (1..4) %}\n      <svg viewBox=\"0 0 24 24\" fill=\"#1faa4b\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n        <path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n      </svg>\n    {% endfor %}\n\n    <!-- partial star (70%) -->\n    <svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-hidden=\"true\">\n      <defs>\n        <linearGradient id=\"{{ grad_id }}\">\n          <stop offset=\"70%\" stop-color=\"#1faa4b\"/>\n          <stop offset=\"70%\" stop-color=\"#e5e7eb\"/>\n        </linearGradient>\n      </defs>\n      <path fill=\"url(#{{ grad_id }})\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n    </svg>\n  </div>\n\n  <div class=\"vesmina-rating-text\">\n    <strong>4,7/5</strong>\n    <span>na podstawie 999+ opinii klientów</span>\n  </div>\n</div>"
+          }
+        },
+        "title_fjYh7d": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h4"
+          }
+        },
+        "price_VDj6mT": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "liquid_jWAQYC": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"vesmina-liveview\" aria-live=\"polite\">\n  <span class=\"vesmina-liveview__icon\" aria-hidden=\"true\">\n    <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\">\n      <path d=\"M1.5 12s4-7.5 10.5-7.5S22.5 12 22.5 12s-4 7.5-10.5 7.5S1.5 12 1.5 12Z\"\n            stroke=\"currentColor\" stroke-width=\"1.6\"/>\n      <circle cx=\"12\" cy=\"12\" r=\"3\"\n              stroke=\"currentColor\" stroke-width=\"1.6\"/>\n    </svg>\n  </span>\n\n  <span class=\"vesmina-liveview__text\">\n    <strong id=\"vesminaEstimate\">82</strong>osób ogląda to teraz\n  </span>\n</div>\n\n<style>\n  .vesmina-liveview{\n    display:flex;\n    align-items:center;\n    gap:6px; /* 🔧 tighter icon ↔ text */\n\n    font-size:14px;\n    line-height:1.2;\n    color:inherit;\n    margin:0;\n    padding:0;\n  }\n\n  .vesmina-liveview__icon{\n    display:inline-flex;\n    align-items:center;\n    opacity:.85;\n  }\n\n  .vesmina-liveview__text strong{\n    font-weight:600;\n    margin-right:3px; /* 🔧 tighter number ↔ text */\n  }\n</style>\n\n<script>\n  (function(){\n    const el = document.getElementById('vesminaEstimate');\n    if(!el) return;\n\n    const min = 50;\n    const max = 100;\n\n    function update(){\n      const value = Math.floor(Math.random() * (max - min + 1)) + min;\n      el.textContent = value;\n    }\n\n    update();\n    setInterval(update, 5000);\n  })();\n</script>"
+          }
+        },
+        "variant_picker_KjFPVF": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": false,
+            "selector_style": "block",
+            "swatch_selector_style": "none",
+            "variant_image_options": "",
+            "size_chart_page": "tabela-rozmiarow"
+          }
+        },
+        "liquid_4TgAKG": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  /* Wrapper */\n  .vesmina-stock-wrap{\n    width:100%;\n    max-width:100%;\n    padding:0;\n    margin:0;\n  }\n\n  .vesmina-stock{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    padding:3px 0;\n    margin:0;\n    width:100%;\n  }\n\n  /* ✅ UNIQUE RED DOT (no conflict with shipping banner) */\n  .vesmina-stock-dot{\n    width:12px;\n    height:12px;\n    background:#c94444;\n    border-radius:50%;\n    flex-shrink:0;\n    position:relative;\n    animation: vesminaStockPulse 2s infinite;\n  }\n\n  .vesmina-stock-dot::before{\n    content:'';\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%,-50%);\n    width:100%;\n    height:100%;\n    background:#c94444;\n    border-radius:50%;\n    animation: vesminaStockWave 2s infinite;\n    opacity:0;\n  }\n\n  @keyframes vesminaStockPulse{\n    0%,100%{ transform:scale(1); }\n    50%{ transform:scale(1.1); }\n  }\n\n  @keyframes vesminaStockWave{\n    0%{ transform:translate(-50%,-50%) scale(1); opacity:.8; }\n    100%{ transform:translate(-50%,-50%) scale(2.5); opacity:0; }\n  }\n\n  /* TEXT — red + bold */\n  .vesmina-stock-text{\n    font-size:14px !important;\n    font-weight:700 !important;\n    color:#c94444 !important;\n    line-height:1.4 !important;\n    margin:0 !important;\n  }\n\n  /* Mobile */\n  @media (max-width:768px){\n    .vesmina-stock{ gap:6px; padding:2px 0; }\n    .vesmina-stock-dot{ width:10px; height:10px; }\n    .vesmina-stock-text{ font-size:13px !important; }\n  }\n\n  @media (max-width:480px){\n    .vesmina-stock{ gap:15px; }\n    .vesmina-stock-dot{ width:9px; height:9px; }\n    .vesmina-stock-text{ font-size:15px !important; }\n  }\n</style>\n\n<div class=\"vesmina-stock-wrap\">\n  <div class=\"vesmina-stock\">\n    <span class=\"vesmina-stock-dot\" aria-hidden=\"true\"></span>\n    <span class=\"vesmina-stock-text\">Ograniczona ilość w magazynie</span>\n  </div>\n</div>"
+          }
+        },
+        "liquid_hWU4QM": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  /* zero padding & margin, mobile friendly */\n  .vesmina-static-7{\n    margin: 0 !important;\n    padding: 0 !important;\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    font-size: 13px;\n    line-height: 1.2;\n    color: #111; /* change if needed */\n  }\n  .vesmina-static-7 .icon{\n    width: 18px;\n    height: 18px;\n    margin: 0 !important;\n    padding: 0 !important;\n    flex: 0 0 auto;\n  }\n  .vesmina-static-7 .txt{\n    margin: 0 !important;\n    padding: 0 !important;\n    white-space: nowrap;\n  }\n  @media (max-width: 740px){\n    .vesmina-static-7{\n      font-size: 12px;\n      gap: 6px;\n    }\n    .vesmina-static-7 .icon{\n      width: 16px;\n      height: 16px;\n    }\n  }\n</style>\n\n<div class=\"vesmina-static-7\" aria-label=\"Low stock notice\">\n  <!-- icon similar vibe to your screenshot -->\n  <svg class=\"icon\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\">\n    <path d=\"M12 7v5l3 2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n    <path d=\"M21 12a9 9 0 1 1-3.1-6.7\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\"/>\n    <path d=\"M21 4v6h-6\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n  </svg>\n\n  <!-- Polish text (fixed number 7) -->\n  <span class=\"txt\">Zostało tylko <strong>7</strong> szt. w magazynie.</span>\n</div>"
+          }
+        },
+        "buy_buttons_RwkAPF": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": false,
+            "show_gift_card_recipient": false,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "liquid_y7wkgN": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .vesmina-shipbar{\n    background:#f8f8f8;\n    padding:10px 15px;\n    border-radius:8px;\n    width:100%;\n    display:flex;\n    justify-content:space-between;\n    align-items:center;\n    gap:14px;\n    margin:0 !important;\n  }\n\n  .vesmina-ship-left,\n  .vesmina-ship-right{\n    display:flex;\n    align-items:center;\n    gap:8px;\n    min-width:0;\n  }\n\n  .vesmina-ship-right{\n    margin-left:auto;\n  }\n\n  /* GREEN DOT */\n  .vesmina-ship-dot{\n    width:12px;\n    height:12px;\n    background:#4caf50;\n    border-radius:50%;\n    position:relative;\n    flex-shrink:0;\n    animation: vesminaShipPulse 2s infinite;\n  }\n\n  .vesmina-ship-dot::before{\n    content:'';\n    position:absolute;\n    top:50%;\n    left:50%;\n    transform:translate(-50%,-50%);\n    width:100%;\n    height:100%;\n    background:#4caf50;\n    border-radius:50%;\n    animation: vesminaShipWave 2s infinite;\n    opacity:0;\n  }\n\n  @keyframes vesminaShipPulse{\n    0%,100%{ transform:scale(1); }\n    50%{ transform:scale(1.1); }\n  }\n\n  @keyframes vesminaShipWave{\n    0%{ transform:translate(-50%,-50%) scale(1); opacity:.8; }\n    100%{ transform:translate(-50%,-50%) scale(2.5); opacity:0; }\n  }\n\n  .vesmina-ship-text{\n    font-size:13px;\n    font-weight:600;\n    color:#333;\n    white-space:nowrap;\n  }\n\n  /* CIRCULAR POLISH FLAG (SVG) */\n  .vesmina-flag-img{\n    width:18px;\n    height:18px;\n    display:block;\n    border-radius:50%;\n    flex-shrink:0;\n  }\n\n  .vesmina-fast{\n    font-size:13px;\n    font-weight:600;\n    color:#333;\n    white-space:nowrap;\n  }\n\n  /* Tablet */\n  @media (max-width:768px){\n    .vesmina-shipbar{ padding:8px 12px; gap:12px; }\n    .vesmina-ship-text, .vesmina-fast{ font-size:12px; }\n    .vesmina-ship-dot{ width:10px; height:10px; }\n    .vesmina-flag-img{ width:16px; height:16px; }\n  }\n\n  /* Mobile */\n  @media (max-width:480px){\n    .vesmina-shipbar{\n      padding:8px 10px;\n      gap:10px;\n      flex-wrap:wrap;\n    }\n    .vesmina-ship-text, .vesmina-fast{\n      font-size:11px;\n      white-space:normal;\n    }\n    .vesmina-ship-dot{ width:9px; height:9px; }\n    .vesmina-flag-img{ width:15px; height:15px; }\n  }\n</style>\n\n<div class=\"vesmina-shipbar\" role=\"note\" aria-label=\"Informacje o dostawie\">\n  <div class=\"vesmina-ship-left\">\n    <span class=\"vesmina-ship-dot\" aria-hidden=\"true\"></span>\n    <span class=\"vesmina-ship-text\" id=\"vesmina-ship-date\">\n      Dostawa: za 3 dni, 00/00\n    </span>\n  </div>\n\n  <div class=\"vesmina-ship-right\">\n    <!-- 🇵🇱 POLISH FLAG — CIRCULAR SVG -->\n    <svg class=\"vesmina-flag-img\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\" aria-label=\"Polska\" role=\"img\">\n      <defs>\n        <clipPath id=\"plCircle\">\n          <circle cx=\"50\" cy=\"50\" r=\"50\"/>\n        </clipPath>\n      </defs>\n      <g clip-path=\"url(#plCircle)\">\n        <rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"#ffffff\"/>\n        <rect x=\"0\" y=\"50\" width=\"100\" height=\"50\" fill=\"#dc143c\"/>\n      </g>\n    </svg>\n\n    <span class=\"vesmina-fast\">Szybka dostawa</span>\n  </div>\n</div>\n\n<script>\n  (function () {\n    function pad2(n){ return String(n).padStart(2,'0'); }\n\n    var today = new Date();\n    var d = new Date(today);\n    d.setDate(today.getDate() + 3); // +3 days\n\n    var dd = pad2(d.getDate());\n    var mm = pad2(d.getMonth() + 1);\n\n    var el = document.getElementById('vesmina-ship-date');\n    if (el) {\n      el.textContent = \"Dostawa: za 3 dni, \" + dd + \"/\" + mm;\n    }\n  })();\n</script>"
+          }
+        },
+        "liquid_8DP7AY": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .product-benefits {\n    margin: 16px 0;\n    display: flex;\n    flex-direction: column;\n    gap: 6px;\n    width: 100%;\n  }\n\n  .benefit-item {\n    padding: 0; /* IMPORTANT: no extra padding */\n    font-size: 14px;\n    font-weight: 500;\n    color: #1a1a1a;\n    line-height: 1.4;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n\n  .benefit-icon {\n    width: 20px;\n    height: 20px;\n    min-width: 20px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n  }\n\n  .benefit-icon img {\n    width: 100%;\n    height: 100%;\n    object-fit: contain;\n  }\n\n  .benefit-text {\n    flex: 1;\n  }\n\n  /* Mobile */\n  @media (max-width: 480px) {\n    .benefit-item {\n      font-size: 13px;\n      gap: 8px;\n    }\n\n    .benefit-icon {\n      width: 30px;\n      height: 25px;\n      min-width: 18px;\n    }\n  }\n</style>\n\n<div class=\"product-benefits\">\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/ChatGPT_Image_Dec_24_2025_06_50_59_PM.png?v=1766595117\" alt=\"BLIK\">\n    </div>\n    <div class=\"benefit-text\">Akceptujemy BLIK</div>\n  </div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/png-transparent-fast-delivery-truck-cargo-delivery-icon-express-delivery-freight-transport-text-service-thumbnail.png?v=1766597648\"\">\n    </div>\n    <div class=\"benefit-text\">Darmowa dostawa Pocztą Polską</div>\n  </div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/9935372.png?v=1766597989\" alt=\"\">\n    </div>\n    <div class=\"benefit-text\">30 dni próbnych – bez żadnego ryzyka</div>\n  </div>\n\n  <div class=\"benefit-item\">\n    <div class=\"benefit-icon\">\n      <img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/202995.png?v=1766598099\" alt=\"\">\n    </div>\n    <div class=\"benefit-text\">Polska firma rodzinna</div>\n  </div>\n</div>"
+          }
+        },
+        "liquid_DWmEcH": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  /* ✅ 7 icons ALWAYS in one line (no wrap, no scroll) */\n  .vesmina-payments {\n    width: 100%;\n    display: grid;\n    grid-template-columns: repeat(7, minmax(0, 1fr)); /* forces 7 in one row */\n    gap: 8px;\n    margin: 0;\n    padding: 0;\n    align-items: center;\n  }\n\n  .vesmina-payment-box {\n    height: 34px;\n    width: 100%;\n    background: #fff;\n    border: 1px solid #e5e5e5;\n    border-radius: 6px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 6px;\n    box-sizing: border-box;\n    overflow: hidden; /* prevents extra whitespace showing */\n  }\n\n  /* ✅ crisp rendering + prevent blur from scaling */\n  .vesmina-payment-box img{\n    height: 18px;\n    width: auto;\n    max-width: 100%;\n    display: block;\n    object-fit: contain;\n    image-rendering: -webkit-optimize-contrast;\n    transform: translateZ(0);\n  }\n\n  /* Tablet */\n  @media (max-width: 768px){\n    .vesmina-payments{ gap: 6px; }\n    .vesmina-payment-box{ height: 32px; padding: 5px; }\n    .vesmina-payment-box img{ height: 16px; }\n  }\n\n  /* Mobile */\n  @media (max-width: 480px){\n    .vesmina-payments{ gap: 5px; }\n    .vesmina-payment-box{ height: 30px; padding: 4px; }\n    .vesmina-payment-box img{ height: 25px; }\n  }\n\n  /* Very small phones */\n  @media (max-width: 360px){\n    .vesmina-payments{ gap: 4px; }\n    .vesmina-payment-box{ height: 28px; padding: 3px; }\n    .vesmina-payment-box img{ height: 25px; }\n  }\n</style>\n\n<div class=\"vesmina-payments\" aria-label=\"Metody płatności\">\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/ChatGPT_Image_Dec_24_2025_06_50_59_PM.png?v=1766595118\" alt=\"BLIK\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/visa-6850402_1280.webp?v=1766624444\" alt=\"Visa\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/mastercard-svgrepo-com.svg?v=1766626105\" alt=\"Mastercard\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/5968245.png?v=1766624533\" alt=\"American Express\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/maestro-svgrepo-com.svg?v=1766625840\" alt=\"Maestro\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/przelewy24-svgrepo-com.svg?v=1766625725\" alt=\"Przelewy24\" loading=\"lazy\"></div>\n  <div class=\"vesmina-payment-box\"><img src=\"https://cdn.shopify.com/s/files/1/1004/5118/9077/files/payu-svgrepo-com.svg?v=1766625770\" alt=\"PayU\" loading=\"lazy\"></div>\n</div>"
+          }
+        },
+        "liquid_zNiUBe": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n  .vesmina-sale-box{\n    width:100%;\n    margin:0;\n    padding:0;\n  }\n\n  .vesmina-sale-inner{\n    border:2px solid #f6f6f6;\n    background:#f6f6f6;\n    border-radius:0;\n    padding:18px 16px;\n    text-align:center;\n  }\n\n  .vesmina-sale-title{\n    margin:0 0 10px 0;\n    font-size:clamp(16px, 4vw, 18px);\n    font-weight:800;\n    letter-spacing:.3px;\n    text-transform:uppercase;\n    color:#c53030;\n    line-height:1.2;\n  }\n\n  .vesmina-sale-sub{\n    margin:0 0 6px 0;\n    font-size:clamp(12.5px, 3.5vw, 13px);\n    font-weight:700;\n    color:#000;\n    line-height:1.3;\n  }\n\n  /* NEW LINE */\n  .vesmina-sale-note{\n    margin:0 0 10px 0;\n    font-size:clamp(11.5px, 3.2vw, 12px);\n    font-weight:500;\n    color:#000;\n    line-height:1.3;\n  }\n\n  .vesmina-sale-tiers{\n    margin:0;\n    font-size:clamp(11.5px, 3.2vw, 12px);\n    font-weight:600;\n    color:#000;\n    line-height:1.4;\n  }\n\n  @media (max-width:480px){\n    .vesmina-sale-inner{\n      padding:16px 14px;\n    }\n  }\n</style>\n\n<div class=\"vesmina-sale-box\" aria-label=\"Promocja\">\n  <div class=\"vesmina-sale-inner\">\n    <div class=\"vesmina-sale-title\">ZIMOWA WYPRZEDAŻ (-70%)</div>\n    <div class=\"vesmina-sale-sub\">Promocja ilościowa</div>\n    <div class=\"vesmina-sale-note\">Rabaty naliczają się automatycznie w koszyku</div>\n    <div class=\"vesmina-sale-tiers\">2 szt. -15% | 3 szt. -20% | 5+ szt. -30%</div>\n  </div>\n</div>"
+          }
+        },
+        "description_xPzDkw": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "collapsible_text_KKeYCL": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "INFORMACJE O WYSYŁCE",
+            "content": "<p><strong>Vesmina</strong> oferuje <strong>darmową dostawę na terenie całej Polski</strong> oraz <strong>bezpieczną wysyłkę zagraniczną</strong>.</p><ul><li><br/>Zamówienia są przetwarzane <strong>w ciągu 24 godzin od potwierdzenia płatności</strong>.<br/></li><li><br/>Każdej przesyłce przypisywany jest <strong>indywidualny numer śledzenia</strong>, wysyłany na adres e-mail.</li></ul>",
+            "page": ""
+          }
+        },
+        "collapsible_text_RjctHk": {
+          "type": "collapsible_text",
+          "settings": {
+            "title": "30-DNIOWA GWARANCJA ZWROTU",
+            "content": "<p>W <strong>Vesmina</strong> oferujemy <strong>30-dniową gwarancję zwrotu</strong>, aby zapewnić pełne zadowolenie z zakupów.</p><p>Jeśli produkt nie spełnia Twoich oczekiwań, możesz go zwrócić <strong>w ciągu 30 dni od daty otrzymania zamówienia</strong>.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "liquid_pVzCcm",
+        "title_fjYh7d",
+        "price_VDj6mT",
+        "liquid_jWAQYC",
+        "variant_picker_KjFPVF",
+        "liquid_4TgAKG",
+        "liquid_hWU4QM",
+        "buy_buttons_RwkAPF",
+        "liquid_y7wkgN",
+        "liquid_8DP7AY",
+        "liquid_DWmEcH",
+        "liquid_zNiUBe",
+        "description_xPzDkw",
+        "collapsible_text_KKeYCL",
+        "collapsible_text_RjctHk"
+      ],
+      "custom_css": [],
+      "settings": {
+        "full_width": false,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 45,
+        "desktop_media_layout": "grid",
+        "mobile_media_size": "contained",
+        "mobile_carousel_control": "free_scroll",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": false,
+        "max_image_zoom_level": 1,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "17667849997448b9ba": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_827e7d0_FbCtDQ": {
+          "type": "ai_gen_block_827e7d0",
+          "settings": {
+            "avatar_1": "shopify://shop_images/polish-women-face.png",
+            "avatar_2": "shopify://shop_images/ChatGPT_Image_Dec_26_2025_11_54_55_PM.png",
+            "show_third_avatar": true,
+            "avatar_3": "shopify://shop_images/ChatGPT_Image_Dec_26_2025_11_54_55_PM_4f62e9bf-47ec-4dc9-8bba-922747478f70.png",
+            "avatar_size": 32,
+            "trust_message": "<strong>Joanna, Eve</strong> oraz ponad 2987<strong> klientów</strong> wybrało Vesmina.",
+            "text_size": 14,
+            "background_color": "#ffffff",
+            "text_color": "#333333",
+            "placeholder_color": "#e8e8e8",
+            "padding": 8,
+            "desktop_width_percent": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_827e7d0_FbCtDQ"
+      ],
+      "settings": {}
+    },
+    "23_gzTAyr": {
+      "type": "23",
+      "blocks": {
+        "item_t8RHpB": {
+          "type": "item",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Dokładnie jak na zdjęciach",
+            "text": "„Trochę się obawiałam zamawiania, ale wszystko przyszło idealne. Rozmiar się zgadza, krój super leży, a kolor wygląda jeszcze lepiej na żywo.”",
+            "author_date": "Magdalena",
+            "author_image": "shopify://shop_images/polish-women-face.png"
+          }
+        },
+        "item_XkqfJe": {
+          "type": "item",
+          "settings": {
+            "stars_count": 4.5,
+            "heading": "Uwielbiam! 😍",
+            "text": "„Na początku miałam pewne wątpliwości, ale po pierwszym zamówieniu jestem naprawdę pozytywnie zaskoczona. Materiał jest świetnej jakości, krój leży idealnie, a całość wygląda dokładnie tak jak na zdjęciach.”",
+            "author_date": "Joanna",
+            "author_image": "shopify://shop_images/ChatGPT_Image_Dec_26_2025_11_54_55_PM.png"
+          }
+        },
+        "item_N3CFNc": {
+          "type": "item",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Świetna jakość 🤍",
+            "text": "„Ubranie wygląda bardzo elegancko, a materiał jest miękki i przyjemny w noszeniu. Widać dbałość o detale. Zdecydowanie jedna z lepszych rzeczy, jakie zamawiałam online.”",
+            "author_date": "Eve",
+            "author_image": "shopify://shop_images/ChatGPT_Image_Dec_26_2025_11_54_55_PM_4f62e9bf-47ec-4dc9-8bba-922747478f70.png"
+          }
+        }
+      },
+      "block_order": [
+        "item_t8RHpB",
+        "item_XkqfJe",
+        "item_N3CFNc"
+      ],
+      "disabled": true,
+      "name": "SS - Testimonial #16",
+      "settings": {
+        "content_align": "center",
+        "content_align_mobile": "center",
+        "heading": "Nasi klienci mówią to najlepiej",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 24,
+        "heading_height": 130,
+        "rating_text": "Ocena",
+        "rating_text_custom": false,
+        "rating_text_font": "josefin_sans_n4",
+        "rating_text_size": 24,
+        "rating_text_size_mobile": 20,
+        "rating_text_height": 130,
+        "rating_text_mt": 16,
+        "rating_text_mt_mobile": 16,
+        "rating": 4.7,
+        "rating_hide": false,
+        "rating_text_hide": false,
+        "stars_count": 4.5,
+        "stars_size": 28,
+        "stars_size_mobile": 24,
+        "text": "<p>na podstawie <strong>2987 opinii</strong></p>",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_mt": 16,
+        "text_mt_mobile": 16,
+        "scrolling_velocity": 112,
+        "scrolling_velocity_mobile": 20,
+        "reverse_direction": false,
+        "pause_hover": true,
+        "scrolling_mt": 36,
+        "scrolling_mt_mobile": 36,
+        "scrolling_gap": 20,
+        "scrolling_gap_mobile": 12,
+        "card_width": 360,
+        "card_width_mobile": 300,
+        "card_padding_vertical": 36,
+        "card_padding_vertical_mobile": 28,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 24,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow_style": "2",
+        "card_content_align": "center",
+        "card_content_align_mobile": "center",
+        "card_height": false,
+        "card_heading_custom": false,
+        "card_heading_font": "josefin_sans_n4",
+        "card_heading_size": 0,
+        "card_heading_size_mobile": 12,
+        "card_heading_height": 50,
+        "card_heading_mt": 0,
+        "card_heading_mt_mobile": 16,
+        "card_text_custom": false,
+        "card_text_font": "josefin_sans_n4",
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "card_text_height": 150,
+        "card_text_mt": 16,
+        "card_text_mt_mobile": 16,
+        "card_text_more": "View More",
+        "card_text_less": "View Less",
+        "card_count_words": 60,
+        "author_image_size": 56,
+        "author_image_size_mobile": 40,
+        "author_image_position": "inline_text",
+        "card_author_date_text_custom": false,
+        "card_author_date_text_font": "josefin_sans_n4",
+        "card_author_date_text_size": 16,
+        "card_author_date_text_size_mobile": 16,
+        "card_author_date_text_height": 130,
+        "card_author_date_text_mt": 16,
+        "card_author_date_text_mt_mobile": 16,
+        "button": "",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 14,
+        "button_height": 100,
+        "button_align": "center",
+        "button_align_mobile": "center",
+        "button_mt": 32,
+        "button_mt_mobile": 28,
+        "button_padding_vertical": 16,
+        "button_padding_vertical_mobile": 16,
+        "button_padding_horizontal": 20,
+        "button_padding_horizontal_mobile": 20,
+        "button_radius": 8,
+        "button_border_thickness": 1,
+        "button_style": "outline",
+        "button_color": "#ffffff",
+        "button_hover_color": "#000000",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#ffffff",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#000000",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "card_author_date_text_color": "#000000",
+        "view_color": "#000000",
+        "heading_color": "#000000",
+        "rating_text_color": "#000000",
+        "stars_bg_color": "#00b67a",
+        "stars_color": "#ffffff",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "1766786850aa4823f5": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_672b602_nAQ38L": {
+          "type": "ai_gen_block_672b602",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_26_2025_11_58_34_PM.png",
+            "image_border_radius": 24,
+            "heading": "Ręcznie wykonane",
+            "description": "<p><br/>Vesmina oferuje starannie wyselekcjonowaną odzież i akcesoria, tworzone z dbałością o detale i jakość.<br/><br/>Każdy produkt łączy ponadczasowy styl, komfort noszenia i naturalną elegancję.<br/><br/></p>",
+            "content_max_width": 1000,
+            "text_max_width": 600,
+            "spacing_mobile": 20,
+            "spacing_desktop": 30,
+            "section_padding_mobile": 20,
+            "section_padding_desktop": 40,
+            "heading_size_mobile": 26,
+            "heading_size_desktop": 42,
+            "heading_weight": "700",
+            "heading_transform": "uppercase",
+            "heading_spacing_mobile": 12,
+            "heading_spacing_desktop": 16,
+            "heading_color": "#000000",
+            "text_size_mobile": 14,
+            "text_size_desktop": 16,
+            "text_line_height": 1.4,
+            "text_color": "#333333",
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_672b602_nAQ38L"
+      ],
+      "settings": {}
+    },
+    "related_products_4ciMMy": {
+      "type": "related-products",
+      "name": "Related products",
+      "settings": {
+        "recommendations_count": 6,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Może Ci się spodobać",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    },
+    "ss_scrolling_images_JFcmXU": {
+      "type": "ss-scrolling-images",
+      "blocks": {
+        "image_MWYQH7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_27_2025_01_35_56_AM.png",
+            "url": ""
+          }
+        },
+        "image_y9FBm6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_27_2025_01_35_56_AM_7304aac4-72a2-44eb-a0cc-04d914674d2e.png",
+            "url": ""
+          }
+        },
+        "image_4FtAaK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_27_2025_01_35_56_AM_d1cc1afb-d1e6-4017-81a5-30965e1695a7.png",
+            "url": ""
+          }
+        },
+        "image_qRDR3A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_27_2025_01_35_56_AM_229d5a9f-6aa1-4144-bd50-89b08b7b0f3c.png",
+            "url": ""
+          }
+        },
+        "image_pcRzMe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Dec_27_2025_01_35_56_AM_df2cb9dd-df61-4b7d-b242-e6a2a9907d81.png",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_MWYQH7",
+        "image_y9FBm6",
+        "image_4FtAaK",
+        "image_qRDR3A",
+        "image_pcRzMe"
+      ],
+      "name": "SS - Scrolling images",
+      "settings": {
+        "heading": "<p>VESMINA</p>",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_height": 130,
+        "heading_align": "center",
+        "slider_speed": 13,
+        "slider_gap": 10,
+        "slider_gap_mobile": 10,
+        "slider_mt": 50,
+        "slider_direction": "left",
+        "pause_hover": false,
+        "image_width_desktop": 300,
+        "image_width_mobile": 120,
+        "image_height_desktop": 400,
+        "image_height_mobile": 200,
+        "image_radius": 10,
+        "use_content": true,
+        "content_position": "center",
+        "content_max_width": 340,
+        "content_max_width_mobile": 340,
+        "content_padding_vertical": 30,
+        "content_padding_horizontal": 30,
+        "content_distance": 60,
+        "content_radius": 10,
+        "content_border_thickness": 0,
+        "use_shadow": true,
+        "text": "<p>Ponad 9 000 klientek w Polsce — społeczność Vesmina stale się powiększa.</p>",
+        "text_custom": false,
+        "text_font": "assistant_n4",
+        "text_size": 24,
+        "text_height": 130,
+        "heading_color": "#000000",
+        "content_bg": "#ffffff",
+        "content_border_color": "#000000",
+        "text_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "text_with_icons_xQbLyb": {
+      "type": "text-with-icons",
+      "blocks": {
+        "item_dctcDe": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-box",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Darmowa wysyłka",
+            "content": "<p>Oferujemy darmową wysyłkę w Polsce.</p>"
+          }
+        },
+        "item_dd3AAp": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-customer-support",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Obsługa klienta",
+            "content": "<p>Oferujemy całodobową obsługę klienta, 7 dni w tygodniu. Zawsze możesz zadać nam pytanie, a nasi eksperci odpowiedzą w ciągu 24 godzin!</p>"
+          }
+        },
+        "item_enWniB": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-coupon",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Ponad 2300 recenzji",
+            "content": "<p>Mamy ponad 25 000 klientów, którzy nam ufają, oraz ponad 2 300, którzy zostawili opinię, z średnią oceną</p>"
+          }
+        },
+        "item_RhTGkK": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-lock",
+            "mobile_icon_width": 24,
+            "icon_width": 32,
+            "icon_background_type": "none",
+            "icon_background": "",
+            "icon_color": "",
+            "title": "Bezpieczna płatność",
+            "content": "<p>Każda płatność u nas jest w 100% bezpieczna i objęta gwarancją bezpieczeństwa.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_dctcDe",
+        "item_dd3AAp",
+        "item_enWniB",
+        "item_RhTGkK"
+      ],
+      "name": "Text with icons",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "title": "",
+        "heading_tag": "h3",
+        "text_alignment": "center",
+        "icon_spacing": "small",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17667849997448b9ba",
+    "23_gzTAyr",
+    "1766786850aa4823f5",
+    "related_products_4ciMMy",
+    "ss_scrolling_images_JFcmXU",
+    "text_with_icons_xQbLyb"
+  ]
+}
