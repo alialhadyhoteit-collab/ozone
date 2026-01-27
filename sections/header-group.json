@@ -1,1 +1,69 @@
-{"type":"header","name":"Header group","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"message":{"type":"message","settings":{"text":"25.000+ ZAUFANYCH KLIENTÓW","url":""}},"message_hjBBBN":{"type":"message","settings":{"text":"Bezpłatna wysyłka","url":""}},"message_cGeDDa":{"type":"message","settings":{"text":"100% GWARANCJA ZWROTU PIENIĘDZY","url":""}}},"block_order":["message","message_hjBBBN","message_cGeDDa"],"settings":{"enable_sticky":false,"autoplay":false,"cycle_speed":6,"text_size":"text-xs","navigation_mode":"scrolling","scrolling_speed":10,"background":"#f96167","background_gradient":"","text_color":"#ffffff"}},"header":{"type":"header","settings":{"enable_sticky":true,"hide_on_scroll":false,"logo":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_16_2025_04_51_32_PM.png","logo_max_width":160,"logo_mobile_max_width":135,"menu":"main-menu","sidebar_menu":"","secondary_menu":"sub-2","menu_open_trigger":"hover","opening_from":"bottom","layout":"logo_left_navigation_center","show_social_media":false,"show_locale_selector":true,"show_country_selector":false,"show_country_flag":false,"show_country_name":false,"transparent_header_text_color":"#ffffff","transparent_logo":"shopify:\/\/shop_images\/ChatGPT_Image_Dec_16_2025_04_51_32_PM_91e00979-dc25-4ade-a44c-65a0d79f8122.png","reduce_padding":true,"background_opacity":100,"background_blur_radius":20}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_GBKbee": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "message_GBKbee"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "autoplay": false,
+        "cycle_speed": 6,
+        "text_size": "text-xs",
+        "navigation_mode": "scrolling",
+        "scrolling_speed": 14,
+        "background": "#f96167",
+        "background_gradient": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "logo_max_width": 160,
+        "logo_mobile_max_width": 135,
+        "menu": "main-menu",
+        "sidebar_menu": "",
+        "secondary_menu": "",
+        "menu_open_trigger": "hover",
+        "opening_from": "bottom",
+        "layout": "logo_left_navigation_center",
+        "show_social_media": false,
+        "show_locale_selector": true,
+        "show_country_selector": false,
+        "show_country_flag": false,
+        "show_country_name": false,
+        "transparent_header_text_color": "#ffffff",
+        "reduce_padding": true,
+        "background_opacity": 100,
+        "background_blur_radius": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
