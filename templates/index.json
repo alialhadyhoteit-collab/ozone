@@ -20,11 +20,11 @@
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "",
+            "subheading": "Everything you need. One place.",
             "title": "",
             "heading_tag": "h0",
-            "button_text": "",
-            "button_link": "",
+            "button_text": "Shop now",
+            "button_link": "shopify://collections/all",
             "text_color": "#ffffff",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
@@ -78,87 +78,6 @@
         "product_card_text_color": ""
       }
     },
-    "collection_list_7UhFDh": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_GVLq9K": {
-          "type": "collection",
-          "settings": {
-            "collection": "kobiety",
-            "subheading": "",
-            "title": "",
-            "url": "shopify://collections/bestsellery",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_E8czpt": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "subheading": "DO -70% RABATU",
-            "title": "Wyprzedaż męska",
-            "url": "shopify://collections/bestsellery-1",
-            "heading_tag": "h2",
-            "text_position": "place-self-center text-center",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_GVLq9K",
-        "collection_E8czpt"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "full_width": true,
-        "stack_collections": false,
-        "collections_per_row_mobile": "2",
-        "collections_per_row": 4,
-        "show_progress_bar": false,
-        "subheading": "",
-        "title": "Bestsellery",
-        "content": "",
-        "link_url": "",
-        "link_text": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": ""
-      }
-    },
-    "featured_collection_dAELd4": {
-      "type": "featured-collection",
-      "name": "Featured collection",
-      "settings": {
-        "collection": "bestsellery-1",
-        "products": [],
-        "full_width": true,
-        "stack_products": false,
-        "show_progress_bar": false,
-        "products_count": 6,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "Najczęściej wybierane modele",
-        "title": "Bestsellery dla mężczyzn",
-        "content": "",
-        "link_url": "",
-        "link_text": "ZOBACZ WSZYSTKIE",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "rgba(0,0,0,0)",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
     "rich_text_EJGpkJ": {
       "type": "rich-text",
       "blocks": {
@@ -171,7 +90,7 @@
         "richtext_BdTtg6": {
           "type": "richtext",
           "settings": {
-            "content": "<p><strong>Skupiamy się na ponadczasowym stylu i codziennej wygodzie.Vesmina to moda, która pasuje do Ciebie — komfort i minimalizm w jednym.</strong></p>"
+            "content": "<p><strong>Everything you need. One place.</strong></p><p>Welcome to <strong>E-YNEED</strong> — your go-to store for everyday essentials, stylish accessories, and trending products designed to make life easier.<br/><br/>We carefully select products that combine <strong>quality, functionality, and modern design</strong>, so you can shop smarter, faster, and with confidence.</p><p>From jewelry and phone accessories to must-have daily items — if you need it, you’ll find it here.</p>"
           }
         }
       },
@@ -187,6 +106,32 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "featured_collection_dAELd4": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "bestsellery-1",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": false,
+        "products_count": 6,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Everyday Jewelry",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "rgba(0,0,0,0)",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
       }
     },
     "before_after_image_L7LjCd": {
@@ -436,9 +381,8 @@
   "order": [
     "slideshow_NGcxtr",
     "featured_collection_JQBC7E",
-    "collection_list_7UhFDh",
-    "featured_collection_dAELd4",
     "rich_text_EJGpkJ",
+    "featured_collection_dAELd4",
     "before_after_image_L7LjCd",
     "media_grid_bGEHfq",
     "image_with_text_overlay_7tdJFc",
