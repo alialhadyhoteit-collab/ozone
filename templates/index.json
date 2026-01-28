@@ -134,38 +134,16 @@
         "product_card_text_color": ""
       }
     },
-    "before_after_image_L7LjCd": {
-      "type": "before-after-image",
-      "name": "Before/after image",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "O marce Vesmina",
-        "content": "<p>W Vesmina wierzymy, że ubrania to coś więcej niż tylko element garderoby. To sposób wyrażania siebie, pewności siebie i stylu na co dzień.</p><p><br/>Nasze kolekcje są starannie wyselekcjonowane, aby łączyć minimalistyczny design, wygodne kroje i jakość, która sprawdza się niezależnie od okazji.</p>",
-        "expand_image": false,
-        "text_position": "end",
-        "before_after_text_position": "top",
-        "before_text": "",
-        "after_text": "",
-        "drag_initial_position": 50,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "#000000",
-        "before_text_color": "#000000",
-        "after_text_color": "#ffffff",
-        "drag_cursor_background": "#ffffff",
-        "drag_cursor_color": "#000000"
-      }
-    },
     "media_grid_bGEHfq": {
       "type": "media-grid",
       "blocks": {
         "image_C9yJkJ": {
           "type": "image",
           "settings": {
-            "title": "WYPRZEDAŻ ZIMOWA",
+            "image": "shopify://shop_images/travel-flatlay.jpg",
+            "title": "",
             "heading_tag": "h2",
-            "link_url": "shopify://collections/bestsellery",
+            "link_url": "",
             "link_text": "",
             "mobile_text_position": "place-self-center text-center",
             "desktop_column_span": 4,
@@ -184,6 +162,7 @@
         "image_FaaAYd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/headphones-and-laptop-on-bed.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "",
@@ -205,6 +184,7 @@
         "image_JGNgPw": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/beauty-products-flatlay.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "",
@@ -226,9 +206,10 @@
         "image_3rR9k4": {
           "type": "image",
           "settings": {
-            "title": "Wyprzedaż męska",
+            "image": "shopify://shop_images/an-engagment-ring-sits-in-a-blue-box.jpg",
+            "title": "",
             "heading_tag": "h2",
-            "link_url": "shopify://collections/bestsellery-1",
+            "link_url": "",
             "link_text": "",
             "mobile_text_position": "place-self-center text-center",
             "desktop_column_span": 4,
@@ -383,7 +364,6 @@
     "featured_collection_JQBC7E",
     "rich_text_EJGpkJ",
     "featured_collection_dAELd4",
-    "before_after_image_L7LjCd",
     "media_grid_bGEHfq",
     "image_with_text_overlay_7tdJFc",
     "text_with_icons_HKLfEx"
