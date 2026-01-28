@@ -242,76 +242,9 @@
         "background_gradient": ""
       }
     },
-    "image_with_text_overlay_7tdJFc": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "subheading_47z4A4": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_BbyKDC": {
-          "type": "heading",
-          "settings": {
-            "text": "Historia Vesmina",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_9YHDHf": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Vesmina to marka stworzona z myślą o nowoczesnym stylu i komforcie.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_47z4A4",
-        "heading_BbyKDC",
-        "richtext_9YHDHf"
-      ],
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
     "text_with_icons_HKLfEx": {
       "type": "text-with-icons",
       "blocks": {
-        "item_Xc3m9d": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-box",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "Darmowa wysyłka",
-            "content": "<p>Oferujemy darmową wysyłkę w Polsce.</p>"
-          }
-        },
-        "item_QRJphH": {
-          "type": "item",
-          "settings": {
-            "icon": "picto-customer-support",
-            "mobile_icon_width": 24,
-            "icon_width": 32,
-            "icon_background_type": "none",
-            "icon_background": "",
-            "icon_color": "",
-            "title": "",
-            "content": "<p>Obsługa klienta 7 dni w tygodniu Odpowiadamy zwykle w ciągu 24 godzin.</p>"
-          }
-        },
         "item_98Gn9i": {
           "type": "item",
           "settings": {
@@ -321,7 +254,7 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "25 000+ klientek i klientów",
+            "title": "25,000+ customers trust E-YNEED",
             "content": "<p>2300+ reviews with a 4.7★ rating</p>"
           }
         },
@@ -334,14 +267,12 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Bezpieczna płatność",
-            "content": "<p>Każda płatność u nas jest w 100% bezpieczna i objęta gwarancją bezpieczeństwa.</p>"
+            "title": "Secure payment",
+            "content": "<p>Shop with confidence — all payments are 100% secure.</p>"
           }
         }
       },
       "block_order": [
-        "item_Xc3m9d",
-        "item_QRJphH",
         "item_98Gn9i",
         "item_dxHiYp"
       ],
@@ -365,7 +296,6 @@
     "rich_text_EJGpkJ",
     "featured_collection_dAELd4",
     "media_grid_bGEHfq",
-    "image_with_text_overlay_7tdJFc",
     "text_with_icons_HKLfEx"
   ]
 }
