@@ -74,7 +74,7 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "logo": "shopify://shop_images/ChatGPT_Image_Jan_29_2026_01_13_44_AM.png",
+        "logo": "shopify://shop_images/ChatGPT_Image_Dec_16_2025_04_51_32_PM.png",
         "logo_max_width": 160,
         "logo_mobile_max_width": 135,
         "menu": "main-menu",
@@ -89,6 +89,7 @@
         "show_country_flag": false,
         "show_country_name": false,
         "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify://shop_images/ChatGPT_Image_Dec_16_2025_04_51_32_PM_91e00979-dc25-4ade-a44c-65a0d79f8122.png",
         "reduce_padding": true,
         "background_opacity": 100,
         "background_blur_radius": 20

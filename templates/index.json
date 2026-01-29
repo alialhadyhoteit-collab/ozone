@@ -15,8 +15,6 @@
         "image_6DmrRH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/small-business-decor.jpg",
-            "mobile_image": "shopify://shop_images/small-business-decor.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -140,7 +138,6 @@
         "image_C9yJkJ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/travel-flatlay.jpg",
             "title": "",
             "heading_tag": "h2",
             "link_url": "",
@@ -162,7 +159,6 @@
         "image_FaaAYd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/headphones-and-laptop-on-bed.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "",
@@ -184,7 +180,6 @@
         "image_JGNgPw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/beauty-products-flatlay.jpg",
             "title": "",
             "heading_tag": "h4",
             "link_url": "",
@@ -206,7 +201,6 @@
         "image_3rR9k4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/an-engagment-ring-sits-in-a-blue-box.jpg",
             "title": "",
             "heading_tag": "h2",
             "link_url": "",
@@ -232,6 +226,7 @@
         "image_JGNgPw",
         "image_3rR9k4"
       ],
+      "disabled": true,
       "name": "Media grid",
       "settings": {
         "full_width": true,
@@ -276,6 +271,7 @@
         "item_98Gn9i",
         "item_dxHiYp"
       ],
+      "disabled": true,
       "name": "Text with icons",
       "settings": {
         "full_width": true,
