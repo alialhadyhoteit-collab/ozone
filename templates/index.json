@@ -156,7 +156,7 @@
             "button_background": "#000000",
             "button_text_color": "#ffffff",
             "overlay_color": "#000000",
-            "overlay_opacity": 51
+            "overlay_opacity": 16
           }
         },
         "image_FaaAYd": {
@@ -222,7 +222,7 @@
             "button_background": "#000000",
             "button_text_color": "#ffffff",
             "overlay_color": "#000000",
-            "overlay_opacity": 43
+            "overlay_opacity": 16
           }
         }
       },
